@@ -5,164 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>产品详情 | 279993553.xyz</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "PingFang SC", "Microsoft Yahei", "Arial", sans-serif;
-            transition: all 0.3s ease;
-        }
-        body {
-            background-color: #f9f7f4;
-            color: #3a3630;
-            line-height: 1.8;
-        }
-        nav {
-            background: #fff;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            border-bottom: 1px solid #eee;
-        }
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #8b5a2b;
-            letter-spacing: 0.5px;
-            text-decoration: none;
-        }
-        .nav-container {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-        .nav-link a {
-            text-decoration: none;
-            color: #3a3630;
-            margin-left: 22px;
-            font-size: 0.95rem;
-        }
-        .nav-link a:hover {
-            color: #8b5a2b;
-        }
-        .lang-switch {
-            display: flex;
-            gap: 10px;
-        }
-        .lang-btn {
-            background: transparent;
-            border: 1px solid #ddd;
-            padding: 4px 10px;
-            border-radius: 4px;
-            color: #3a3630;
-            cursor: pointer;
-            font-size: 0.85rem;
-        }
-        .lang-btn.active {
-            background: #8b5a2b;
-            color: #fff;
-            border-color: #8b5a2b;
-        }
-        .container {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-        .detail-card {
-            background: #fff;
-            border-radius: 8px;
-            padding: 30px;
-            border: 1px solid #eee;
-        }
-        .detail-img {
-            width: 100%;
-            border-radius: 6px;
-            margin-bottom: 25px;
-        }
-        .detail-title {
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-            color: #3a3630;
-        }
-        .detail-price {
-            font-size: 1.4rem;
-            color: #8b5a2b;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        .detail-desc {
-            margin-bottom: 30px;
-            color: #5a554e;
-            font-size: 1.05rem;
-        }
-        .detail-desc p {
-            margin-bottom: 12px;
-        }
-        .buy-btn {
-            display: inline-block;
-            background: #8b5a2b;
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-        .buy-btn:hover {
-            background: #704a22;
-        }
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #f2eee8;
-            color: #5a554e;
-            font-size: 0.9rem;
-            margin-top: 60px;
-        }
-        /* 双语控制 */
-        .cn-content {
-            display: block;
-        }
-        .en-content {
-            display: none;
-        }
-        body.en .cn-content {
-            display: none;
-        }
-        body.en .en-content {
-            display: block;
-        }
-        /* 移动端适配 */
-        @media (max-width:768px) {
-            .nav-container {
-                gap: 15px;
-            }
-            .nav-link a {
-                margin-left: 15px;
-                font-size: 0.9rem;
-            }
-            .container {
-                margin: 40px auto;
-            }
-            .detail-card {
-                padding: 25px 20px;
-            }
-            .detail-title {
-                font-size: 1.4rem;
-            }
-        }
-        @media (max-width:480px) {
-            .nav-link {
-                display: none;
-            }
-            .lang-switch {
-                gap: 5px;
-            }
-            .lang-btn {
-                padding: 3px 8px;
-                font-size: 0.8rem;
-            }
-        }
+        *{margin:0;padding:0;box-sizing:border-box;font-family:"PingFang SC","Microsoft Yahei",sans-serif}
+        body{background:#f9f7f4;color:#3a3630;line-height:1.9}
+        nav{background-image:url('https://images.unsplash.com/photo-154178909411-f56ce539ca9a');background-size:cover;background-position:center;background-color:rgba(255,255,255,0.75);background-blend-mode:overlay;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999;border-bottom:1px solid #eee}
+        .logo{font-size:1.4rem;color:#8b5a2b;text-decoration:none;font-weight:600}
+        .nav-container{display:flex;align-items:center;gap:25px}
+        .nav-link a{margin-left:22px;text-decoration:none;color:#3a3630;font-size:.95rem}
+        .detail{max-width:900px;margin:60px auto;background:#fff;padding:40px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+        .detail h1{text-align:center;color:#8b5a2b;margin-bottom:30px}
+        .detail img{max-width:100%;border-radius:8px;margin:20px 0}
+        .detail p{margin-bottom:20px;text-indent:2em;color:#555}
+        .back{display:inline-block;background:#8b5a2b;color:#fff;padding:10px 20px;border-radius:4px;text-decoration:none;margin-top:30px}
+        footer{text-align:center;padding:30px;background:#f2eee8}
+        .cn{display:block}
+        .en{display:none}
+        body.en .cn{display:none}
+        body.en .en{display:block}
+        @media(max-width:480px){.nav-link{display:none}}
+    </style>
+    <script>
+        if(localStorage.lang)document.body.className=localStorage.lang
+    </script>
+</head>
+<body>
+<nav>
+    <a href="../index.html" class="logo">279993553.xyz</a>
+    <div class="nav-container">
+        <a href="../index.html">首页</a>
+        <a href="../product.html">产品中心</a>
+        <a href="../blog.html">测评文章</a>
+    </div>
+</nav>
+
+<div class="detail">
+    <h1>产品标题在这里</h1>
+    <img src="https://picsum.photos/800/450">
+    <p>产品详细介绍内容……</p>
+    <p>材质、尺寸、卖点、优势……</p>
+    <a href="../product.html" class="back">返回产品列表</a>
+</div>
+
+<footer>© 2026 279993553.xyz</footer>
+</body>
+</html>

@@ -1,289 +1,98 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>产品测评 | 279993553.xyz</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "PingFang SC", "Microsoft Yahei", "Arial", sans-serif;
-            transition: all 0.3s ease;
-        }
-        body {
-            background-color: #f9f7f4;
-            color: #3a3630;
-            line-height: 1.8;
-        }
-        nav {
-            background: #fff;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            border-bottom: 1px solid #eee;
-        }
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #8b5a2b;
-            letter-spacing: 0.5px;
-            text-decoration: none;
-        }
-        .nav-container {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-        .nav-link a {
-            text-decoration: none;
-            color: #3a3630;
-            margin-left: 22px;
-            font-size: 0.95rem;
-        }
-        .nav-link a:hover {
-            color: #8b5a2b;
-        }
-        .lang-switch {
-            display: flex;
-            gap: 10px;
-        }
-        .lang-btn {
-            background: transparent;
-            border: 1px solid #ddd;
-            padding: 4px 10px;
-            border-radius: 4px;
-            color: #3a3630;
-            cursor: pointer;
-            font-size: 0.85rem;
-        }
-        .lang-btn.active {
-            background: #8b5a2b;
-            color: #fff;
-            border-color: #8b5a2b;
-        }
-        .container {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 40px;
-            color: #8b5a2b;
-            position: relative;
-        }
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 50px;
-            height: 2px;
-            background: #8b5a2b;
-            margin: 10px auto 0;
-        }
-        .article-list {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-        .article-item {
-            background: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid #eee;
-        }
-        .article-item h3 {
-            margin-bottom: 10px;
-            color: #3a3630;
-            font-size: 1.2rem;
-        }
-        .article-item p {
-            color: #5a554e;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-        .read-more {
-            color: #8b5a2b;
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-        .read-more:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #f2eee8;
-            color: #5a554e;
-            font-size: 0.9rem;
-            margin-top: 60px;
-        }
-        /* 双语控制 */
-        .cn-content {
-            display: block;
-        }
-        .en-content {
-            display: none;
-        }
-        body.en .cn-content {
-            display: none;
-        }
-        body.en .en-content {
-            display: block;
-        }
-        /* 移动端适配 */
-        @media (max-width:768px) {
-            .nav-container {
-                gap: 15px;
-            }
-            .nav-link a {
-                margin-left: 15px;
-                font-size: 0.9rem;
-            }
-            .container {
-                margin: 40px auto;
-            }
-            .article-item {
-                padding: 20px 15px;
-            }
-        }
-        @media (max-width:480px) {
-            .nav-link {
-                display: none;
-            }
-            .lang-switch {
-                gap: 5px;
-            }
-            .lang-btn {
-                padding: 3px 8px;
-                font-size: 0.8rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>测评文章 | 279993553.xyz</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"PingFang SC","Microsoft Yahei",sans-serif}
+body{background:#f9f7f4;color:#3a3630;line-height:1.8}
+nav{background-image:url('https://images.unsplash.com/photo-154178909411-f56ce539ca9a');background-size:cover;background-position:center;background-color:rgba(255,255,255,0.75);background-blend-mode:overlay;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999;border-bottom:1px solid #eee}
+.logo{font-size:1.4rem;font-weight:600;color:#8b5a2b;text-decoration:none}
+.nav-container{display:flex;align-items:center;gap:25px}
+.nav-link a{text-decoration:none;color:#3a3630;margin-left:22px;font-size:.95rem}
+.nav-link a:hover{color:#8b5a2b}
+.lang-switch{display:flex;gap:10px}
+.lang-btn{background:transparent;border:1px solid #ddd;padding:4px 10px;border-radius:4px;cursor-pointer;font-size:.85rem}
+.lang-btn.active{background:#8b5a2b;color:#fff}
+.container{max-width:900px;margin:60px auto;padding:0 20px}
+.page-title{text-align:center;font-size:2rem;color:#8b5a2b;margin-bottom:40px}
+.articles{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:25px}
+.card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.05);border:1px solid #eee}
+.card img{width:100%;height:180px;object-fit:cover}
+.card-body{padding:20px}
+.card-title{font-size:1.1rem;margin-bottom:10px;color:#333}
+.card-meta{font-size:.85rem;color:#999;margin-bottom:10px}
+.btn{display:inline-block;background:#8b5a2b;color:#fff;padding:6px 14px;border-radius:4px;text-decoration:none;font-size:.9rem}
+.btn:hover{background:#704a22}
+.cn{display:block}
+.en{display:none}
+body.en .cn{display:none}
+body.en .en{display:block}
+footer{text-align:center;padding:30px;background:#f2eee8;color:#5a554e;margin-top:60px}
+@media(max-width:768px){.nav-link a{margin-left:15px}}
+@media(max-width:480px){.nav-link{display:none}}
+</style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">279993553.xyz</a>
-        <div class="nav-container">
-            <div class="nav-link">
-                <a href="index.html">
-                    <span class="cn-content">首页</span>
-                    <span class="en-content">Home</span>
-                </a>
-                <a href="index.html#about">
-                    <span class="cn-content">关于我们</span>
-                    <span class="en-content">About Us</span>
-                </a>
-                <a href="product.html">
-                    <span class="cn-content">产品中心</span>
-                    <span class="en-content">Products</span>
-                </a>
-                <a href="blog.html">
-                    <span class="cn-content">测评文章</span>
-                    <span class="en-content">Reviews</span>
-                </a>
-                <a href="index.html#contact">
-                    <span class="cn-content">合作联系</span>
-                    <span class="en-content">Contact</span>
-                </a>
-            </div>
-            <div class="lang-switch">
-                <button class="lang-btn active" onclick="switchLang('cn')">
-                    <span class="cn-content">中文</span>
-                    <span class="en-content">CN</span>
-                </button>
-                <button class="lang-btn" onclick="switchLang('en')">
-                    <span class="cn-content">英文</span>
-                    <span class="en-content">EN</span>
-                </button>
-            </div>
-        </div>
-    </nav>
 
-    <div class="container">
-        <h2 class="section-title">
-            <span class="cn-content">产品测评 & 选购指南</span>
-            <span class="en-content">Product Reviews & Buying Guide</span>
-        </h2>
-        <div class="article-list">
-            <div class="article-item">
-                <h3>
-                    <span class="cn-content">新手选购避坑指南，看完不踩雷</span>
-                    <span class="en-content">Novice Buying Guide to Avoid Pitfalls</span>
-                </h3>
-                <p class="cn-content">详细讲解行业选购技巧、分辨优劣、适合人群推荐，帮你花更少钱买到更好品质。</p>
-                <p class="en-content">Detailed explanation of industry purchasing skills, distinguishing advantages and disadvantages, recommendation for suitable groups, helping you buy better quality with less money.</p>
-                <a href="#" class="read-more">
-                    <span class="cn-content">阅读全文 →</span>
-                    <span class="en-content">Read More →</span>
-                </a>
-            </div>
-            <div class="article-item">
-                <h3>
-                    <span class="cn-content">热门款式深度测评，优缺点真实分析</span>
-                    <span class="en-content">In-depth Review of Popular Styles, True Analysis of Pros and Cons</span>
-                </h3>
-                <p class="cn-content">从材质、做工、性价比多维度实测，客观评价适合什么人群入手。</p>
-                <p class="en-content">Multi-dimensional actual measurement from material, workmanship and cost performance, objectively evaluating which groups are suitable for purchase.</p>
-                <a href="#" class="read-more">
-                    <span class="cn-content">阅读全文 →</span>
-                    <span class="en-content">Read More →</span>
-                </a>
-            </div>
-            <div class="article-item">
-                <h3>
-                    <span class="cn-content">一件代发与批发合作模式说明</span>
-                    <span class="en-content">Explanation of Dropshipping and Wholesale Cooperation Model</span>
-                </h3>
-                <p class="cn-content">适合个人卖家、实体店、工作室合作规则、拿货价格、售后政策详解。</p>
-                <p class="en-content">Detailed explanation of cooperation rules, purchase price and after-sales policy suitable for individual sellers, physical stores and studios.</p>
-                <a href="#" class="read-more">
-                    <span class="cn-content">阅读全文 →</span>
-                    <span class="en-content">Read More →</span>
-                </a>
-            </div>
-            <div class="article-item">
-                <h3>
-                    <span class="cn-content">高性价比货源挑选技巧，新手必看</span>
-                    <span class="en-content">Cost-Effective Source Selection Skills, Must-See for Novices</span>
-                </h3>
-                <p class="cn-content">教你如何分辨优质货源，避开低价陷阱，提升店铺利润空间。</p>
-                <p class="en-content">Teach you how to distinguish high-quality sources, avoid low-price traps, and increase store profit margins.</p>
-                <a href="#" class="read-more">
-                    <span class="cn-content">阅读全文 →</span>
-                    <span class="en-content">Read More →</span>
-                </a>
-            </div>
+<nav>
+    <a href="index.html" class="logo">279993553.xyz</a>
+    <div class="nav-container">
+        <div class="nav-link">
+            <a href="index.html"><span class="cn">首页</span><span class="en">Home</span></a>
+            <a href="product.html"><span class="cn">产品中心</span><span class="en">Products</span></a>
+            <a href="blog.html"><span class="cn">测评文章</span><span class="en">Reviews</span></a>
+        </div>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="setLang('cn')">中文</button>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
         </div>
     </div>
+</nav>
 
-    <footer>
-        <p>
-            <span class="cn-content">© 2026 279993553.xyz 电商商务官网 版权所有</span>
-            <span class="en-content">© 2026 279993553.xyz E-commerce Official Website All Rights Reserved</span>
-        </p>
-    </footer>
+<div class="container">
+    <h2 class="page-title">
+        <span class="cn">产品测评文章</span>
+        <span class="en">Product Reviews</span>
+    </h2>
+    <div class="articles" id="articleList"></div>
+</div>
 
-    <script>
-        function switchLang(lang) {
-            const body = document.body;
-            const langBtns = document.querySelectorAll('.lang-btn');
-            if (lang === 'en') {
-                body.classList.add('en');
-            } else {
-                body.classList.remove('en');
-            }
-            langBtns.forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector(`.lang-btn[onclick="switchLang('${lang}')"]`).classList.add('active');
-        }
-    </script>
+<footer>© 2026 279993553.xyz</footer>
+
+<script>
+function setLang(l){document.body.className=l;localStorage.lang=l}
+onload=()=>{if(localStorage.lang)setLang(localStorage.lang)}
+
+async function loadArticles(){
+    const list = [
+        "articles/review-01.html",
+        "articles/review-02.html",
+        "articles/review-03.html"
+    ]
+    const wrap = document.getElementById("articleList")
+    for(let url of list){
+        try{
+            let r = await fetch(url)
+            let t = await r.text()
+            let title = t.match(/<title>([\s\S]+?)<\/title>/)?.[1] || "无标题文章"
+            title = title.replace(" | 279993553.xyz","")
+            wrap.innerHTML += `
+            <div class="card">
+                <img src="https://picsum.photos/seed/${url}/600/400">
+                <div class="card-body">
+                    <div class="card-title">${title}</div>
+                    <a href="${url}" class="btn">
+                        <span class="cn">阅读全文</span>
+                        <span class="en">Read More</span>
+                    </a>
+                </div>
+            </div>`
+        }catch(e){}
+    }
+}
+loadArticles()
+</script>
 </body>
 </html>
