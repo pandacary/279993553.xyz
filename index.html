@@ -13,13 +13,17 @@
             transition: all 0.3s ease;
         }
         body {
-            background-color: #f9f7f4; /* Autumn Dragon 主背景色：暖调米白 */
-            color: #3a3630; /* 主文字色：深棕灰，不刺眼 */
+            background-color: #f9f7f4;
+            color: #3a3630;
             line-height: 1.8;
         }
-        /* 导航栏 - Autumn Dragon 简约风格 */
+        /* 导航栏 - 使用第1张背景图 + 优化透明度 */
         nav {
-            background: #fff;
+            background-image: url('https://images.unsplash.com/photo-154178909411-f56ce539ca9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(255,255,255,0.7); /* 优化为70%透明度，更好融合背景图 */
+            background-blend-mode: overlay;
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
@@ -32,7 +36,7 @@
         .logo {
             font-size: 1.4rem;
             font-weight: 600;
-            color: #8b5a2b; /* Autumn Dragon 主色调：暖棕 */
+            color: #8b5a2b;
             letter-spacing: 0.5px;
             text-decoration: none;
         }
@@ -50,7 +54,6 @@
         .nav-link a:hover {
             color: #8b5a2b;
         }
-        /* 中英文切换按钮 */
         .lang-switch {
             display: flex;
             gap: 10px;
@@ -69,9 +72,9 @@
             color: #fff;
             border-color: #8b5a2b;
         }
-        /* 首屏横幅 - 简约自然，无夸张渐变 */
+        /* 首屏横幅 */
         .hero {
-            background: #f2eee8; /* 暖调浅灰，Autumn Dragon 常用 */
+            background: #f2eee8;
             text-align: center;
             padding: 80px 20px;
             margin-bottom: 20px;
@@ -84,7 +87,7 @@
         }
         .hero p {
             font-size: 1.05rem;
-            color: #5a554e; /* 次要文字色：浅棕灰 */
+            color: #5a554e;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -109,7 +112,7 @@
             background: #8b5a2b;
             margin: 10px auto 0;
         }
-        /* 关于我们 - 简约卡片，无夸张阴影 */
+        /* 关于我们 */
         .about-box {
             background: #fff;
             padding: 40px;
@@ -121,7 +124,7 @@
             font-size: 1.05rem;
             color: #5a554e;
         }
-        /* 主营类目 - 简约卡片，暖调边框 */
+        /* 主营类目 */
         .cate-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -146,7 +149,7 @@
             color: #5a554e;
             font-size: 0.95rem;
         }
-        /* 产品展示区 - Autumn Dragon 简约风格 */
+        /* 产品展示区 */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -193,9 +196,9 @@
             cursor: pointer;
         }
         .buy-btn:hover {
-            background: #704a22; /* 深一点的暖棕 */
+            background: #704a22;
         }
-        /* 联系方式 - 简约卡片 */
+        /* 联系方式 */
         .contact-box {
             background: #fff;
             padding: 40px;
@@ -211,7 +214,7 @@
         .contact-box strong {
             color: #8b5a2b;
         }
-        /* 页脚 - 简约暖调 */
+        /* 页脚 */
         footer {
             text-align: center;
             padding: 30px;
@@ -267,7 +270,7 @@
     </style>
 </head>
 <body>
-    <!-- 导航栏（含中英文切换） -->
+    <!-- 导航栏（含中英文切换，已添加背景图） -->
     <nav>
         <a href="index.html" class="logo">279993553.xyz</a>
         <div class="nav-container">
@@ -472,20 +475,18 @@
         </p>
     </footer>
 
-    <!-- 中英文切换JS（纯静态，无需后台） -->
+    <!-- 中英文切换JS -->
     <script>
         function switchLang(lang) {
             const body = document.body;
             const langBtns = document.querySelectorAll('.lang-btn');
             
-            // 切换页面语言类
             if (lang === 'en') {
                 body.classList.add('en');
             } else {
                 body.classList.remove('en');
             }
             
-            // 切换按钮激活状态
             langBtns.forEach(btn => {
                 btn.classList.remove('active');
             });
