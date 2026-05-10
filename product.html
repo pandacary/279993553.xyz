@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品中心 | 279993553.xyz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft Yahei", "Arial", sans-serif;
+            transition: all 0.3s ease;
+        }
+        body {
+            background-color: #f9f7f4;
+            color: #3a3630;
+            line-height: 1.8;
+        }
+        nav {
+            background: #fff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            border-bottom: 1px solid #eee;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #8b5a2b;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .nav-link a {
+            text-decoration: none;
+            color: #3a3630;
+            margin-left: 22px;
+            font-size: 0.95rem;
+        }
+        .nav-link a:hover {
+            color: #8b5a2b;
+        }
+        .lang-switch {
+            display: flex;
+            gap: 10px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #ddd;
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: #3a3630;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .lang-btn.active {
+            background: #8b5a2b;
+            color: #fff;
+            border-color: #8b5a2b;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: #8b5a2b;
+            position: relative;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: #8b5a2b;
+            margin: 10px auto 0;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+        .product-card:hover {
+            border-color: #8b5a2b;
+            transform: translateY(-3px);
+        }
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #3a3630;
+        }
+        .product-price {
+            font-size: 1.2rem;
+            color: #8b5a2b;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .buy-btn {
+            display: inline-block;
+            background: #8b5a2b;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .buy-btn:hover {
+            background: #704a22;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #f2eee8;
+            color: #5a554e;
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+        /* 双语控制 */
+        .cn-content {
+            display: block;
+        }
+        .en-content {
+            display: none;
+        }
+        body.en .cn-content {
+            display: none;
+        }
+        body.en .en-content {
+            display: block;
+        }
+        /* 移动端适配 */
+        @media (max-width:768px) {
+            .nav-container {
+                gap: 15px;
+            }
+            .nav-link a {
+                margin-left: 15px;
+                font-size: 0.9rem;
+            }
+            .container {
+                margin: 40px auto;
+            }
+        }
+        @media (max-width:480px) {
+            .nav-link {
+                display: none;
+            }
+            .lang-switch {
+                gap: 5px;
+            }
+            .lang-btn {
+                padding: 3px 8px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">279993553.xyz</a>
+        <div class="nav-container">
+            <div class="nav-link">
+                <a href="index.html">
+                    <span class="cn-content">首页</span>
+                    <span class="en-content">Home</span>
+                </a>
+                <a href="index.html#about">
+                    <span class="cn-content">关于我们</span>
+                    <span class="en-content">About Us</span>
+                </a>
+                <a href="product.html">
+                    <span class="cn-content">产品中心</span>
+                    <span class="en-content">Products</span>
+                </a>
+                <a href="blog.html">
+                    <span class="cn-content">测评文章</span>
+                    <span class="en-content">Reviews</span>
+                </a>
+                <a href="index.html#contact">
+                    <span class="cn-content">合作联系</span>
+                    <span class="en-content">Contact</span>
+                </a>
+            </div>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="switchLang('cn')">
+                    <span class="cn-content">中文</span>
+                    <span class="en-content">CN</span>
+                </button>
+                <button class="lang-btn" onclick="switchLang('en')">
+                    <span class="cn-content">英文</span>
+                    <span class="en-content">EN</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="section-title">
+            <span class="cn-content">全部产品展示</span>
+            <span class="en-content">All Products</span>
+        </h2>
+        <div class="product-grid">
+            <!-- 产品1 -->
+            <div class="product-card">
+                <img src="https://picsum.photos/seed/p1/400/300" alt="产品图片" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">
+                        <span class="cn-content">精品款式一</span>
+                        <span class="en-content">Premium Style 1</span>
+                    </h3>
+                    <p class="product-price">¥199 / $27.8</p>
+                    <a href="product-detail.html" class="buy-btn">
+                        <span class="cn-content">查看详情</span>
+                        <span class="en-content">View Details</span>
+                    </a>
+                </div>
+            </div>
+            <!-- 产品2 -->
+            <div class="product-card">
+                <img src="https://picsum.photos/seed/p2/400/300" alt="产品图片" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">
+                        <span class="cn-content">精品款式二</span>
+                        <span class="en-content">Premium Style 2</span>
+                    </h3>
+                    <p class="product-price">¥239 / $33.2</p>
+                    <a href="product-detail.html" class="buy-btn">
+                        <span class="cn-content">查看详情</span>
+                        <span class="en-content">View Details</span>
+                    </a>
+                </div>
+            </div>
+            <!-- 产品3 -->
+            <div class="product-card">
+                <img src="https://picsum.photos/seed/p3/400/300" alt="产品图片" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">
+                        <span class="cn-content">精品款式三</span>
+                        <span class="en-content">Premium Style 3</span>
+                    </h3>
+                    <p class="product-price">¥169 / $23.4</p>
+                    <a href="product-detail.html" class="buy-btn">
+                        <span class="cn-content">查看详情</span>
+                        <span class="en-content">View Details</span>
+                    </a>
+                </div>
+            </div>
+            <!-- 产品4 -->
+            <div class="product-card">
+                <img src="https://picsum.photos/seed/p4/400/300" alt="产品图片" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">
+                        <span class="cn-content">精品款式四</span>
+                        <span class="en-content">Premium Style 4</span>
+                    </h3>
+                    <p class="product-price">¥129 / $17.8</p>
+                    <a href="product-detail.html" class="buy-btn">
+                        <span class="cn-content">查看详情</span>
+                        <span class="en-content">View Details</span>
+                    </a>
+                </div>
+            </div>
+            <!-- 产品5 -->
+            <div class="product-card">
+                <img src="https://picsum.photos/seed/p5/400/300" alt="产品图片" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">
+                        <span class="cn-content">精品款式五</span>
+                        <span class="en-content">Premium Style 5</span>
+                    </h3>
+                    <p class="product-price">¥269 / $37.3</p>
+                    <a href="product-detail.html" class="buy-btn">
+                        <span class="cn-content">查看详情</span>
+                        <span class="en-content">View Details</span>
+                    </a>
+                </div>
+            </div>
+            <!-- 产品6 -->
+            <div class="product-card">
+                <img src="https://picsum.photos/seed/p6/400/300" alt="产品图片" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">
+                        <span class="cn-content">精品款式六</span>
+                        <span class="en-content">Premium Style 6</span>
+                    </h3>
+                    <p class="product-price">¥159 / $22.0</p>
+                    <a href="product-detail.html" class="buy-btn">
+                        <span class="cn-content">查看详情</span>
+                        <span class="en-content">View Details</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            <span class="cn-content">© 2026 279993553.xyz 电商商务官网 版权所有</span>
+            <span class="en-content">© 2026 279993553.xyz E-commerce Official Website All Rights Reserved</span>
+        </p>
+    </footer>
+
+    <script>
+        function switchLang(lang) {
+            const body = document.body;
+            const langBtns = document.querySelectorAll('.lang-btn');
+            if (lang === 'en') {
+                body.classList.add('en');
+            } else {
+                body.classList.remove('en');
+            }
+            langBtns.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[onclick="switchLang('${lang}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

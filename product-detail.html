@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品详情 | 279993553.xyz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft Yahei", "Arial", sans-serif;
+            transition: all 0.3s ease;
+        }
+        body {
+            background-color: #f9f7f4;
+            color: #3a3630;
+            line-height: 1.8;
+        }
+        nav {
+            background: #fff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            border-bottom: 1px solid #eee;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #8b5a2b;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .nav-link a {
+            text-decoration: none;
+            color: #3a3630;
+            margin-left: 22px;
+            font-size: 0.95rem;
+        }
+        .nav-link a:hover {
+            color: #8b5a2b;
+        }
+        .lang-switch {
+            display: flex;
+            gap: 10px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #ddd;
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: #3a3630;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .lang-btn.active {
+            background: #8b5a2b;
+            color: #fff;
+            border-color: #8b5a2b;
+        }
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .detail-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            border: 1px solid #eee;
+        }
+        .detail-img {
+            width: 100%;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+        .detail-title {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #3a3630;
+        }
+        .detail-price {
+            font-size: 1.4rem;
+            color: #8b5a2b;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .detail-desc {
+            margin-bottom: 30px;
+            color: #5a554e;
+            font-size: 1.05rem;
+        }
+        .detail-desc p {
+            margin-bottom: 12px;
+        }
+        .buy-btn {
+            display: inline-block;
+            background: #8b5a2b;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .buy-btn:hover {
+            background: #704a22;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #f2eee8;
+            color: #5a554e;
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+        /* 双语控制 */
+        .cn-content {
+            display: block;
+        }
+        .en-content {
+            display: none;
+        }
+        body.en .cn-content {
+            display: none;
+        }
+        body.en .en-content {
+            display: block;
+        }
+        /* 移动端适配 */
+        @media (max-width:768px) {
+            .nav-container {
+                gap: 15px;
+            }
+            .nav-link a {
+                margin-left: 15px;
+                font-size: 0.9rem;
+            }
+            .container {
+                margin: 40px auto;
+            }
+            .detail-card {
+                padding: 25px 20px;
+            }
+            .detail-title {
+                font-size: 1.4rem;
+            }
+        }
+        @media (max-width:480px) {
+            .nav-link {
+                display: none;
+            }
+            .lang-switch {
+                gap: 5px;
+            }
+            .lang-btn {
+                padding: 3px 8px;
+                font-size: 0.8rem;
+            }
+        }

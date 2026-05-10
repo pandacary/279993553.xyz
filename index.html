@@ -3,186 +3,494 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>279993553.xyz | 个人品牌官网</title>
+    <title>279993553.xyz | 电商商务官网</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Microsoft Yahei", sans-serif;
+            font-family: "PingFang SC", "Microsoft Yahei", "Arial", sans-serif;
+            transition: all 0.3s ease;
         }
         body {
-            background: #f8f9fa;
-            color: #333;
-            line-height: 1.7;
+            background-color: #f9f7f4; /* Autumn Dragon 主背景色：暖调米白 */
+            color: #3a3630; /* 主文字色：深棕灰，不刺眼 */
+            line-height: 1.8;
         }
-        /* 导航栏 */
+        /* 导航栏 - Autumn Dragon 简约风格 */
         nav {
             background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 1rem 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
-            z-index: 99;
+            z-index: 999;
+            border-bottom: 1px solid #eee;
         }
         .logo {
             font-size: 1.4rem;
-            font-weight: bold;
-            color: #222;
-        }
-        .nav-menu a {
-            margin-left: 2rem;
+            font-weight: 600;
+            color: #8b5a2b; /* Autumn Dragon 主色调：暖棕 */
+            letter-spacing: 0.5px;
             text-decoration: none;
-            color: #555;
-            transition: 0.3s;
         }
-        .nav-menu a:hover {
-            color: #0066cc;
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
         }
-        /* 首屏 */
-        .banner {
-            background: linear-gradient(135deg, #0066cc, #1a365d);
+        .nav-link a {
+            text-decoration: none;
+            color: #3a3630;
+            margin-left: 22px;
+            font-size: 0.95rem;
+        }
+        .nav-link a:hover {
+            color: #8b5a2b;
+        }
+        /* 中英文切换按钮 */
+        .lang-switch {
+            display: flex;
+            gap: 10px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #ddd;
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: #3a3630;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .lang-btn.active {
+            background: #8b5a2b;
             color: #fff;
+            border-color: #8b5a2b;
+        }
+        /* 首屏横幅 - 简约自然，无夸张渐变 */
+        .hero {
+            background: #f2eee8; /* 暖调浅灰，Autumn Dragon 常用 */
             text-align: center;
             padding: 80px 20px;
+            margin-bottom: 20px;
         }
-        .banner h1 {
-            font-size: 2.8rem;
+        .hero h1 {
+            font-size: 2.2rem;
             margin-bottom: 15px;
+            color: #8b5a2b;
+            font-weight: 600;
         }
-        .banner p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        .hero p {
+            font-size: 1.05rem;
+            color: #5a554e; /* 次要文字色：浅棕灰 */
+            max-width: 600px;
+            margin: 0 auto;
         }
         /* 容器通用 */
-        .wrap {
+        .container {
             max-width: 1100px;
             margin: 60px auto;
             padding: 0 20px;
         }
-        .title {
+        .section-title {
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 40px;
-            color: #222;
+            color: #8b5a2b;
+            position: relative;
         }
-        /* 关于我 */
-        .about {
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: #8b5a2b;
+            margin: 10px auto 0;
+        }
+        /* 关于我们 - 简约卡片，无夸张阴影 */
+        .about-box {
             background: #fff;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            border: 1px solid #eee;
         }
-        /* 业务服务 */
-        .service-list {
+        .about-box p {
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            color: #5a554e;
+        }
+        /* 主营类目 - 简约卡片，暖调边框 */
+        .cate-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
-        .service-card {
+        .cate-card {
             background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #eee;
         }
-        .service-card h3 {
+        .cate-card:hover {
+            border-color: #8b5a2b;
+        }
+        .cate-card h3 {
+            margin-bottom: 10px;
+            color: #8b5a2b;
+            font-size: 1.1rem;
+        }
+        .cate-card p {
+            color: #5a554e;
+            font-size: 0.95rem;
+        }
+        /* 产品展示区 - Autumn Dragon 简约风格 */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+        .product-card:hover {
+            border-color: #8b5a2b;
+            transform: translateY(-3px);
+        }
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #3a3630;
+        }
+        .product-price {
+            font-size: 1.2rem;
+            color: #8b5a2b;
+            font-weight: bold;
             margin-bottom: 15px;
-            color: #0066cc;
         }
-        /* 联系方式 */
-        .contact {
+        .buy-btn {
+            display: inline-block;
+            background: #8b5a2b;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+        }
+        .buy-btn:hover {
+            background: #704a22; /* 深一点的暖棕 */
+        }
+        /* 联系方式 - 简约卡片 */
+        .contact-box {
             background: #fff;
             padding: 40px;
-            border-radius: 12px;
+            border-radius: 8px;
             text-align: center;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
         }
-        .contact p {
+        .contact-box p {
             font-size: 1.1rem;
-            margin: 10px 0;
+            margin: 12px 0;
+            color: #5a554e;
         }
-        /* 页脚 */
+        .contact-box strong {
+            color: #8b5a2b;
+        }
+        /* 页脚 - 简约暖调 */
         footer {
             text-align: center;
             padding: 30px;
-            color: #666;
-            background: #fff;
-            margin-top: 40px;
+            background: #f2eee8;
+            color: #5a554e;
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+        /* 双语内容隐藏/显示控制 */
+        .cn-content {
+            display: block;
+        }
+        .en-content {
+            display: none;
+        }
+        body.en .cn-content {
+            display: none;
+        }
+        body.en .en-content {
+            display: block;
         }
         /* 移动端适配 */
         @media (max-width:768px) {
-            .nav-menu {
+            .nav-container {
+                gap: 15px;
+            }
+            .nav-link a {
+                margin-left: 15px;
+                font-size: 0.9rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .container {
+                margin: 40px auto;
+            }
+            .about-box, .contact-box {
+                padding: 30px 20px;
+            }
+        }
+        @media (max-width:480px) {
+            .nav-link {
                 display: none;
             }
-            .banner h1 {
-                font-size: 2rem;
+            .lang-switch {
+                gap: 5px;
+            }
+            .lang-btn {
+                padding: 3px 8px;
+                font-size: 0.8rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- 导航栏（含中英文切换） -->
     <nav>
-        <div class="logo">279993553.xyz</div>
-        <div class="nav-menu">
-            <a href="#home">首页</a>
-            <a href="#about">关于我</a>
-            <a href="#service">业务服务</a>
-            <a href="#contact">联系方式</a>
+        <a href="index.html" class="logo">279993553.xyz</a>
+        <div class="nav-container">
+            <div class="nav-link">
+                <a href="index.html">
+                    <span class="cn-content">首页</span>
+                    <span class="en-content">Home</span>
+                </a>
+                <a href="#about">
+                    <span class="cn-content">关于我们</span>
+                    <span class="en-content">About Us</span>
+                </a>
+                <a href="product.html">
+                    <span class="cn-content">产品中心</span>
+                    <span class="en-content">Products</span>
+                </a>
+                <a href="blog.html">
+                    <span class="cn-content">测评文章</span>
+                    <span class="en-content">Reviews</span>
+                </a>
+                <a href="#contact">
+                    <span class="cn-content">合作联系</span>
+                    <span class="en-content">Contact</span>
+                </a>
+            </div>
+            <!-- 中英文切换按钮 -->
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="switchLang('cn')">
+                    <span class="cn-content">中文</span>
+                    <span class="en-content">CN</span>
+                </button>
+                <button class="lang-btn" onclick="switchLang('en')">
+                    <span class="cn-content">英文</span>
+                    <span class="en-content">EN</span>
+                </button>
+            </div>
         </div>
     </nav>
 
     <!-- 首屏 -->
-    <section class="banner" id="home">
-        <h1>279993553.xyz</h1>
-        <p>个人品牌 · 简约商务官网</p>
+    <section class="hero" id="home">
+        <h1>
+            <span class="cn-content">电商货源 · 一件代发 · 批发合作</span>
+            <span class="en-content">E-commerce Supply · Dropshipping · Wholesale</span>
+        </h1>
+        <p>
+            <span class="cn-content">深耕电商行业多年，稳定货源，诚信经营，长期共赢</span>
+            <span class="en-content">Deeply engaged in e-commerce for years, stable supply, honest operation, long-term win-win</span>
+        </p>
     </section>
 
-    <!-- 关于我 -->
-    <div class="wrap" id="about">
-        <h2 class="title">关于我</h2>
-        <div class="about">
-            <p>我们。</p>
-            <p>做了十几年电商公司。</p>
-            <p>个人和品牌官网。</p>
+    <!-- 关于我们 -->
+    <div class="container" id="about">
+        <h2 class="section-title">
+            <span class="cn-content">关于我们</span>
+            <span class="en-content">About Us</span>
+        </h2>
+        <div class="about-box">
+            <p class="cn-content">深耕电商行业多年，拥有稳定源头供应链，主打高性价比货源，支持零售、一件代发、线下批发合作。</p>
+            <p class="en-content">Engaged in the e-commerce industry for many years, we have a stable source supply chain, focusing on cost-effective sources, supporting retail, dropshipping and offline wholesale cooperation.</p>
+            <p class="cn-content">秉持诚信经营、长期共赢的理念，可为个人卖家、工作室、实体店、电商店铺提供稳定货源与售后支持。</p>
+            <p class="en-content">Upholding the concept of honest operation and long-term win-win, we can provide stable supply and after-sales support for individual sellers, studios, physical stores and e-commerce stores.</p>
+            <p class="cn-content">网站作为官方商务展示入口，所有业务均可通过下方联系方式咨询对接。</p>
+            <p class="en-content">As the official business display portal, all businesses can be consulted and connected through the contact information below.</p>
         </div>
     </div>
 
-    <!-- 业务服务 -->
-    <div class="wrap" id="service">
-        <h2 class="title">业务服务</h2>
-        <div class="service-list">
-            <div class="service-card">
-                <h3>电商业务一</h3>
-                <p>长达十多年电商业务</p>
+    <!-- 主营类目 -->
+    <div class="container" id="category">
+        <h2 class="section-title">
+            <span class="cn-content">主营业务类目</span>
+            <span class="en-content">Main Business</span>
+        </h2>
+        <div class="cate-grid">
+            <div class="cate-card">
+                <h3>
+                    <span class="cn-content">电商货源供货</span>
+                    <span class="en-content">E-commerce Supply</span>
+                </h3>
+                <p>
+                    <span class="cn-content">全品类货源对接，稳定库存</span>
+                    <span class="en-content">Full-category supply docking, stable inventory</span>
+                </p>
             </div>
-            <div class="service-card">
-                <h3>女鞋业务</h3>
-                <p>成都真皮女鞋</p>
+            <div class="cate-card">
+                <h3>
+                    <span class="cn-content">一件代发服务</span>
+                    <span class="en-content">Dropshipping Service</span>
+                </h3>
+                <p>
+                    <span class="cn-content">无需囤货，一键代发全国</span>
+                    <span class="en-content">No need to stock up, one-click dropshipping nationwide</span>
+                </p>
             </div>
-            <div class="service-card">
-                <h3>新业务</h3>
-                <p>新业务正在进行中</p>
+            <div class="cate-card">
+                <h3>
+                    <span class="cn-content">线下批发合作</span>
+                    <span class="en-content">Offline Wholesale</span>
+                </h3>
+                <p>
+                    <span class="cn-content">批量拿货，价格优势明显</span>
+                    <span class="en-content">Bulk purchase with obvious price advantage</span>
+                </p>
+            </div>
+            <div class="cate-card">
+                <h3>
+                    <span class="cn-content">电商运营咨询</span>
+                    <span class="en-content">E-commerce Operation Consultation</span>
+                </h3>
+                <p>
+                    <span class="cn-content">店铺起店、选品、运营指导</span>
+                    <span class="en-content">Store opening, product selection, operation guidance</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 爆款产品展示区 -->
+    <div class="container" id="products">
+        <h2 class="section-title">
+            <span class="cn-content">爆款产品展示</span>
+            <span class="en-content">Hot Products</span>
+        </h2>
+        <div class="product-grid">
+            <!-- 产品1 -->
+            <div class="product-card">
+                <img src="https://picsum.photos/seed/product1/400/300" alt="产品图片" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">
+                        <span class="cn-content">时尚简约T恤</span>
+                        <span class="en-content">Fashion Simple T-shirt</span>
+                    </h3>
+                    <p class="product-price">¥39.9 / $5.6</p>
+                    <button class="buy-btn" onclick="window.open('https://www.taobao.com', '_blank')">
+                        <span class="cn-content">立即购买</span>
+                        <span class="en-content">Buy Now</span>
+                    </button>
+                </div>
+            </div>
+            <!-- 产品2 -->
+            <div class="product-card">
+                <img src="https://picsum.photos/seed/product2/400/300" alt="产品图片" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">
+                        <span class="cn-content">舒适运动跑鞋</span>
+                        <span class="en-content">Comfortable Sports Running Shoes</span>
+                    </h3>
+                    <p class="product-price">¥199 / $27.8</p>
+                    <button class="buy-btn" onclick="window.open('https://www.pinduoduo.com', '_blank')">
+                        <span class="cn-content">立即购买</span>
+                        <span class="en-content">Buy Now</span>
+                    </button>
+                </div>
+            </div>
+            <!-- 产品3 -->
+            <div class="product-card">
+                <img src="https://picsum.photos/seed/product3/400/300" alt="产品图片" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">
+                        <span class="cn-content">智能保温杯</span>
+                        <span class="en-content">Intelligent Thermos Cup</span>
+                    </h3>
+                    <p class="product-price">¥89 / $12.4</p>
+                    <button class="buy-btn" onclick="window.open('https://www.taobao.com', '_blank')">
+                        <span class="cn-content">立即购买</span>
+                        <span class="en-content">Buy Now</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- 联系方式 -->
-    <div class="wrap" id="contact">
-        <h2 class="title">联系方式</h2>
-        <div class="contact">
-            <p>QQ：<strong>279993553</strong></p>
-            <p>邮箱：27993553@qq.com</p>
-            <p>微信 / ID：chengduxie</p>
+    <div class="container" id="contact">
+        <h2 class="section-title">
+            <span class="cn-content">合作联系方式</span>
+            <span class="en-content">Contact Us</span>
+        </h2>
+        <div class="contact-box">
+            <p>
+                <span class="cn-content">商务QQ：</span>
+                <span class="en-content">Business QQ：</span>
+                <strong>279993553</strong>
+            </p>
+            <p>
+                <span class="cn-content">官方域名：</span>
+                <span class="en-content">Official Domain：</span>
+                <strong>279993553.xyz</strong>
+            </p>
+            <p>
+                <span class="cn-content">支持业务咨询、货源对接、批发合作、同行交流</span>
+                <span class="en-content">Support business consultation, supply docking, wholesale cooperation and peer communication</span>
+            </p>
         </div>
     </div>
 
     <!-- 页脚 -->
     <footer>
-        © 2026-2036 279993553.xyz  All Rights Reserved
+        <p>
+            <span class="cn-content">© 2026 279993553.xyz 电商商务官网 版权所有</span>
+            <span class="en-content">© 2026 279993553.xyz E-commerce Official Website All Rights Reserved</span>
+        </p>
     </footer>
+
+    <!-- 中英文切换JS（纯静态，无需后台） -->
+    <script>
+        function switchLang(lang) {
+            const body = document.body;
+            const langBtns = document.querySelectorAll('.lang-btn');
+            
+            // 切换页面语言类
+            if (lang === 'en') {
+                body.classList.add('en');
+            } else {
+                body.classList.remove('en');
+            }
+            
+            // 切换按钮激活状态
+            langBtns.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-btn[onclick="switchLang('${lang}')"]`).classList.add('active');
+        }
+    </script>
 </body>
 </html>
